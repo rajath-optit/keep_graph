@@ -145,9 +145,5 @@
 | 143   | VPC               | VPCs peering connection route tables should have least privilege                | Ensures that route tables are configured with the least privilege necessary for connectivity. | 16          | Medium   |
 | 144   | VPC               | VPCs should exist in multiple regions                                            | Enhances resilience by distributing VPCs across multiple regions.         | 1           | High     |
 | 145   | VPC               | VPCs should have both public and private subnets configured                     | Ensures proper segmentation and security of resources within VPCs.        | 9           | High     |
-| 146   | VPC              | Count of title                                                                    | Total number of compliance titles associated with VPC.                   |             |          |
-| 147   | VPC              | Count of control_title                                                             | Total number of control titles associated with VPC.                       |             |          |
 | 148   | WAFv2           | Logging should be enabled on AWS WAFv2 regional and global web access control list (ACLs) | Ensures that logging is activated for monitoring and auditing purposes.   | 4           | High     |
-| 149   | WAFv2           | Count of title                                                                    | Total number of compliance titles associated with WAFv2.                  |             |          |
-| 150   | WAFv2           | Count of control_title                                                             | Total number of control titles associated with WAFv2.                     |             |          |
 ---
