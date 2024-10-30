@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Tables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th {
+            background-color: #add8e6;
+            color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        /* Priority colors */
+        .critical {
+            background-color: #ffcccc; /* Red for Critical */
+        }
+        .high {
+            background-color: #ffdab9; /* Orange for High */
+        }
+        .medium {
+            background-color: #fffacd; /* Yellow for Medium */
+        }
+        .well-architected {
+            background-color: #d8f8d8; /* Green for Well-Architected */
+        }
+    </style>
+</head>
+<body>
+
+<h2>ACM Control Table</h2>
+
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ACM</td>
+        <td>ACM certificates should not use wildcard certificates</td>
+        <td>Ensures certificates do not use wildcards for enhanced security.</td>
+        <td>3</td>
+        <td class="critical">Critical</td>
+    </tr>
+</table>
+
+<h2>Auto Scaling Control Table</h2>
+
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Auto Scaling</td>
+        <td>EC2 instances should require IMDSv2</td>
+        <td>Configures EC2 instances to use IMDSv2 mitigating security risks.</td>
+        <td>8</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Auto Scaling</td>
+        <td>No suspended processes in Auto Scaling groups</td>
+        <td>All processes are active to maintain reliability and scaling functionality.</td>
+        <td>44</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Auto Scaling</td>
+        <td>Health checks for load-balanced Auto Scaling groups</td>
+        <td>Ensures load-balanced Auto Scaling groups have health checks for operational stability.</td>
+        <td>30</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Auto Scaling</td>
+        <td>User data in launch configurations should not contain sensitive data</td>
+        <td>Prevents sensitive data in user data scripts to avoid unintended exposure.</td>
+        <td>1</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Auto Scaling</td>
+        <td>Auto Scaling groups should span multiple availability zones</td>
+        <td>Ensures redundancy across zones to improve resilience.</td>
+        <td>7</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Auto Scaling</td>
+        <td>Use EC2 launch templates in Auto Scaling groups</td>
+        <td>Launch templates should be used for consistency and resource optimization.</td>
+        <td>16</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Auto Scaling</td>
+        <td>Multiple instance types and availability zones</td>
+        <td>Requires use of diverse instance types and zones for scalability and failover.</td>
+        <td>44</td>
+        <td class="critical">Critical</td>
+    </tr>
+</table>
+
+<h2>EBS Control Table</h2>
+
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>EBS</td>
+        <td>Delete on termination for attached volumes</td>
+        <td>Configures volumes to delete on termination preventing orphaned storage costs.</td>
+        <td>54</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>EBS</td>
+        <td>Encryption enabled for attached volumes</td>
+        <td>Ensures all EBS volumes attached to instances have encryption enabled for data protection.</td>
+        <td>76</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>EBS</td>
+        <td>Snapshot encryption</td>
+        <td>Protects snapshot data by enforcing encryption at rest.</td>
+        <td>19</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>EBS</td>
+        <td>Encryption at rest for EBS volumes</td>
+        <td>Secures data at rest in volumes through encryption.</td>
+        <td>75</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>EBS</td>
+        <td>Volume snapshots availability</td>
+        <td>Confirms EBS volumes are backed up through snapshots to prevent data loss.</td>
+        <td>152</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>EBS</td>
+        <td>Volumes should be attached to EC2 instances</td>
+        <td>Ensures volumes are correctly attached to prevent wasted resources.</td>
+        <td>28</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>EBS</td>
+        <td>Backup plan for EBS volumes</td>
+        <td>Enforces that volumes are included in a backup plan for data retention.</td>
+        <td>164</td>
+        <td class="critical">Critical</td>
+    </tr>
+</table>
+
+<h2>EC2 Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <!-- EC2 Table Rows -->
+    <tr><td>16</td><td>EC2</td><td>Termination protection for instances</td><td>Prevents accidental termination of EC2 instances by enabling termination protection.</td><td>113</td><td class="critical">Critical</td></tr>
+    <tr><td>17</td><td>EC2</td><td>Detailed monitoring enabled for EC2 instances</td><td>Ensures that detailed monitoring is active for improved tracking of EC2 instance performance.</td><td>113</td><td class="medium">Medium</td></tr>
+    <tr><td>18</td><td>EC2</td><td>IAM role with restricted access for instances</td><td>Prevents credentials exposure through strict IAM roles.</td><td>81</td><td class="critical">Critical</td></tr>
+    <tr><td>19</td><td>EC2</td><td>EBS optimization enabled for instances</td><td>Ensures that instances have EBS optimization enabled for enhanced performance.</td><td>87</td><td class="medium">Medium</td></tr>
+    <tr><td>20</td><td>EC2</td><td>Instances located within a VPC</td><td>Confirms all EC2 instances are running within a VPC for secure networking.</td><td>2</td><td class="critical">Critical</td></tr>
+    <tr><td>21</td><td>EC2</td><td>Backup plan coverage for instances</td><td>Ensures all EC2 instances are included in a backup plan.</td><td>113</td><td class="critical">Critical</td></tr>
+    <tr><td>22</td><td>EC2</td><td>IAM profile attached to instances</td><td>Validates that instances have an IAM profile attached for access management.</td><td>32</td><td class="critical">Critical</td></tr>
+    <tr><td>23</td><td>EC2</td><td>Instances avoid 'launch wizard' security groups</td><td>Avoids using default security groups that may lack security customization.</td><td>2</td><td class="critical">Critical</td></tr>
+    <tr><td>24</td><td>EC2</td><td>Instances without public IPs</td><td>Restricts public IP assignment to prevent direct internet access.</td><td>11</td><td class="critical">Critical</td></tr>
+    <tr><td>25</td><td>EC2</td><td>No key pairs in running state for instances</td><td>Ensures no active key pairs in instances to avoid unauthorized access.</td><td>100</td><td class="critical">Critical</td></tr>
+    <tr><td>26</td><td>EC2</td><td>Single ENI usage for instances</td><td>Limits instances to a single Elastic Network Interface (ENI) for simplified network configs.</td><td>38</td><td class="medium">Medium</td></tr>
+    <tr><td>27</td><td>EC2</td><td>IMDSv2 usage for instances</td><td>Enforces use of Instance Metadata Service Version 2 for enhanced security.</td><td>95</td><td class="critical">Critical</td></tr>
+    <tr><td>28</td><td>EC2</td><td>Secrets excluded from user data</td><td>Prevents secrets exposure in EC2 instance user data.</td><td>69</td><td class="critical">Critical</td></tr>
+    <tr><td>29</td><td>EC2</td><td>Removal of stopped instances after 30 days</td><td>Ensures stopped instances are removed within 30 days to avoid unnecessary costs.</td><td>2</td><td class="medium">Medium</td></tr>
+    <tr><td>30</td><td>EC2</td><td>Attached EBS volumes delete on termination</td><td>Configures attached EBS volumes to delete upon instance termination to prevent unused storage.</td><td>14</td><td class="medium">Medium</td></tr>
+    <tr><td>31</td><td>EC2</td><td>Images (AMIs) are recent (within 90 days)</td><td>Ensures that AMIs in use are updated regularly within 90 days.</td><td>26</td><td class="medium">Medium</td></tr>
+    <tr><td>32</td><td>EC2</td><td>Encrypted AMIs</td><td>Protects AMIs through encryption to secure the data in images.</td><td>10</td><td class="critical">Critical</td></tr>
+    <tr><td>33</td><td>EC2</td><td>Removal of instances stopped for over 90 days</td><td>Maintains instance lifecycle by removing inactive instances over 90 days.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>34</td><td>EC2</td><td>Instances not older than 180 days</td><td>Ensures all instances are periodically refreshed within 180 days for performance and security.</td><td>28</td><td class="critical">Critical</td></tr>
+    <tr><td>35</td><td>EC2</td><td>Public instances have IAM profile attached</td><td>Confirms public instances are secure with appropriate IAM profile attached.</td><td>6</td><td class="critical">Critical</td></tr>
+</table>
+
+<h2>EKS Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>36</td><td>EKS</td><td>Kubernetes secrets encryption using KMS</td><td>Ensures Kubernetes secrets in EKS clusters are encrypted using AWS KMS for added data security.</td><td>2</td><td class="critical">Critical</td></tr>
+    <tr><td>37</td><td>EKS</td><td>Control plane audit logging enabled</td><td>Enables logging for control plane operations in EKS, assisting in audit and security tracking.</td><td>2</td><td class="high">High</td></tr>
+</table>
+
+<h2>ELB Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>38</td><td>ELB</td><td>Connection draining enabled on Classic Load Balancers</td><td>Ensures Classic Load Balancers drain connections properly before scaling in or out.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>39</td><td>ELB</td><td>Logging enabled for application and classic load balancers</td><td>Enables logging for monitoring ELB traffic assisting in troubleshooting and auditing.</td><td>17</td><td class="high">High</td></tr>
+    <tr><td>40</td><td>ELB</td><td>SSL/HTTPS listeners on load balancers only</td><td>Configures load balancers to only use SSL or HTTPS for secure data transit.</td><td>22</td><td class="critical">Critical</td></tr>
+    <tr><td>41</td><td>ELB</td><td>Deletion protection enabled for application load balancers</td><td>Protects application load balancers from accidental deletion.</td><td>21</td><td class="high">High</td></tr>
+    <tr><td>42</td><td>ELB</td><td>Drop HTTP headers on application load balancers</td><td>Configures load balancers to drop HTTP headers to enhance privacy and security.</td><td>21</td><td class="medium">Medium</td></tr>
+    <tr><td>43</td><td>ELB</td><td>Web Application Firewall (WAF) enabled for application load balancers</td><td>Adds WAF protection to filter out malicious requests enhancing security.</td><td>21</td><td class="critical">Critical</td></tr>
+    <tr><td>44</td><td>ELB</td><td>HTTP to HTTPS redirection on application load balancers</td><td>Ensures HTTP requests are redirected to HTTPS to enforce secure connections.</td><td>3</td><td class="high">High</td></tr>
+    <tr><td>45</td><td>ELB</td><td>Cross-zone load balancing on classic load balancers</td><td>Balances traffic across multiple availability zones for improved resilience and performance.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>46</td><td>ELB</td><td>SSL/HTTPS listeners for classic load balancers</td><td>Ensures Classic Load Balancers use SSL or HTTPS for secure communication.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>47</td><td>ELB</td><td>Secure SSL cipher usage on ELB listeners</td><td>Configures ELB listeners to use secure SSL ciphers for safe data transmission.</td><td>46</td><td class="critical">Critical</td></tr>
+    <tr><td>48</td><td>ELB</td><td>Load balancers prohibit public access</td><td>Prevents public access to ELB load balancers restricting access to private networks.</td><td>18</td><td class="critical">Critical</td></tr>
+    <tr><td>49</td><td>ELB</td><td>TLS listener security policy on network load balancers</td><td>Configures TLS security policy for network load balancers to maintain secure communication.</td><td>1</td><td class="high">High</td></tr>
+</table>
+
+<h2>IAM Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>50</td><td>IAM</td><td>Support role created for AWS Support incident management</td><td>Ensures a dedicated support role is created for handling AWS Support incidents efficiently.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>51</td><td>IAM</td><td>Password policy prevents password reuse</td><td>Prevents users from reusing previous passwords strengthening password security.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>52</td><td>IAM</td><td>Password policy requires at least one number</td><td>Enforces inclusion of numeric characters in passwords for better security.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>53</td><td>IAM</td><td>Password policy requires at least one symbol</td><td>Enforces inclusion of special characters in passwords to enhance security.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>54</td><td>IAM</td><td>Policies attached only to groups or roles</td><td>Ensures policies are attached to IAM groups or roles only not to individual users.</td><td>17</td><td class="high">High</td></tr>
+    <tr><td>55</td><td>IAM</td><td>No full ":" administrative privileges in policies</td><td>Prevents granting full access through IAM policies to minimize risks.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>56</td><td>IAM</td><td>Policies should not grant full access to any service</td><td>Limits permissions in policies to prevent unauthorized access.</td><td>38</td><td class="critical">Critical</td></tr>
+    <tr><td>57</td><td>IAM</td><td>Administrator access policy should not be attached to any role</td><td>Avoids over-permissioning by preventing administrator access attachment to roles.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>58</td><td>IAM</td><td>Inline policies should not allow blocked actions on KMS keys</td><td>Prevents inline policies from allowing restricted actions on KMS keys.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>59</td><td>IAM</td><td>Managed policies should not allow blocked actions on KMS keys</td><td>Ensures managed policies do not grant unauthorized actions on KMS keys.</td><td>5</td><td class="high">High</td></tr>
+    <tr><td>60</td><td>IAM</td><td>IAM Access Analyzer enabled in all regions</td><td>Enables IAM Access Analyzer for comprehensive monitoring across all regions.</td><td>16</td><td class="medium">Medium</td></tr>
+    <tr><td>61</td><td>IAM</td><td>Only one active access key per IAM user</td><td>Restricts IAM users to one active access key for security.</td><td>4</td><td class="medium">Medium</td></tr>
+    <tr><td>62</td><td>IAM</td><td>AWS managed policies attached to IAM roles</td><td>Requires use of AWS managed policies on IAM roles for standardized permission management.</td><td>1146</td><td class="high">High</td></tr>
+    <tr><td>63</td><td>IAM</td><td>IAM groups should have at least one user</td><td>Ensures IAM groups are populated with users for accountability.</td><td>2</td><td class="medium">Medium</td></tr>
+    <tr><td>64</td><td>IAM</td><td>No inline policies on groups</td><td>Disallows inline policies for roles, groups, or users to maintain policy consistency.</td><td>33</td><td class="high">High</td></tr>
+    <tr><td>65</td><td>IAM</td><td>Strong password configurations for IAM users</td><td>Enforces strong password policies for IAM users to prevent unauthorized access.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>66</td><td>IAM</td><td>IAM policy usage</td><td>Ensures policies are in use and actively managed.</td><td>1129</td><td class="medium">Medium</td></tr>
+    <tr><td>67</td><td>IAM</td><td>IAM roles without assume role policies</td><td>Avoids improper access control by limiting the usage of assume role policies.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>68</td><td>IAM</td><td>Unused IAM roles removal</td><td>Identifies and removes unused IAM roles for security and policy hygiene.</td><td>123</td><td class="medium">Medium</td></tr>
+    <tr><td>69</td><td>IAM</td><td>Hardware MFA enabled for root user</td><td>Adds hardware MFA for root user to ensure strong authentication.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>70</td><td>IAM</td><td>MFA enabled for root user</td><td>Requires MFA for root user to enhance security.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>71</td><td>IAM</td><td>Access key rotation every 90 days</td><td>Enforces access key rotation for IAM users to maintain security.</td><td>42</td><td class="high">High</td></tr>
+    <tr><td>72</td><td>IAM</td><td>No inline or attached policies for IAM users</td><td>Prevents IAM users from having inline or attached policies for minimized risk.</td><td>18</td><td class="high">High</td></tr>
+    <tr><td>73</td><td>IAM</td><td>Users must belong to at least one group</td><td>Ensures IAM users are part of a group for better access management.</td><td>9</td><td class="medium">Medium</td></tr>
+    <tr><td>74</td><td>IAM</td><td>Hardware MFA for IAM users</td><td>Adds hardware MFA for IAM users to secure account access.</td><td>33</td><td class="critical">Critical</td></tr>
+    <tr><td>75</td><td>IAM</td><td>Strong password policies for minimum length</td><td>Ensures minimum password length of 8 characters for IAM users.</td><td>1</td><td class="medium">Medium</td></tr>
+</table>
+
+<h2>Lambda Controls</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr>
+        <td>76</td>
+        <td>Lambda</td>
+        <td>Cloudwatch Lambda insights enabled</td>
+        <td>Enables Lambda insights for monitoring function performance and troubleshooting.</td>
+        <td>21</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>77</td>
+        <td>Lambda</td>
+        <td>Encryption in transit for environment variables</td>
+        <td>Protects environment variables with encryption to secure sensitive data.</td>
+        <td>21</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>78</td>
+        <td>Lambda</td>
+        <td>CloudTrail logging enabled for Lambda functions</td>
+        <td>Logs Lambda functions activities for enhanced auditing.</td>
+        <td>21</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>79</td>
+        <td>Lambda</td>
+        <td>Concurrent execution limit for Lambda functions</td>
+        <td>Sets a limit on concurrent executions to avoid over-utilization.</td>
+        <td>21</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>Lambda</td>
+        <td>Lambda CORS configuration does not allow all origins</td>
+        <td>Restricts CORS settings to prevent unauthorized cross-origin requests.</td>
+        <td>20</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>81</td>
+        <td>Lambda</td>
+        <td>Dead-letter queue configured for Lambda functions</td>
+        <td>Provides a dead-letter queue for handling failed events in Lambda functions.</td>
+        <td>21</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>82</td>
+        <td>Lambda</td>
+        <td>Lambda functions in a VPC</td>
+        <td>Configures Lambda functions within a VPC to restrict access to private resources.</td>
+        <td>7</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>83</td>
+        <td>Lambda</td>
+        <td>Multi-availability zone configuration for Lambda functions</td>
+        <td>Ensures Lambda functions operate across multiple availability zones for redundancy.</td>
+        <td>1</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>84</td>
+        <td>Lambda</td>
+        <td>Lambda functions restrict public access</td>
+        <td>Restricts public access to Lambda functions to prevent unauthorized use.</td>
+        <td>1</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>85</td>
+        <td>Lambda</td>
+        <td>Lambda functions restrict public URL access</td>
+        <td>Prevents Lambda functions from being publicly accessible via URL.</td>
+        <td>21</td>
+        <td class="critical">Critical</td>
+    </tr>
+    <tr>
+        <td>86</td>
+        <td>Lambda</td>
+        <td>Lambda function tracing enabled</td>
+        <td>Enables tracing for Lambda functions for better performance monitoring.</td>
+        <td>21</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>87</td>
+        <td>Lambda</td>
+        <td>No sensitive data in Lambda function variables</td>
+        <td>Ensures Lambda variables do not contain sensitive data.</td>
+        <td>13</td>
+        <td class="high">High</td>
+    </tr>
+</table>
+
+<h2>RDS Controls</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr>
+        <td>88</td>
+        <td>RDS</td>
+        <td>RDS event notifications subscription for critical cluster events</td>
+        <td>Configures an RDS event notifications subscription to alert for critical cluster events.</td>
+        <td>1</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>89</td>
+        <td>RDS</td>
+        <td>RDS event notifications subscription for critical database instance events</td>
+        <td>Ensures that an event notifications subscription is set for critical database instance events.</td>
+        <td>1</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>RDS</td>
+        <td>RDS event notifications subscription for critical database parameter group events</td>
+        <td>Configures an event notifications subscription for critical database parameter group events.</td>
+        <td>1</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>91</td>
+        <td>RDS</td>
+        <td>RDS event notifications subscription for critical database security group events</td>
+        <td>Ensures that an event notifications subscription is set for critical database security group events.</td>
+        <td>1</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>92</td>
+        <td>RDS</td>
+        <td>Aurora MySQL DB clusters publish audit logs to CloudWatch Logs</td>
+        <td>Ensures that Aurora MySQL DB clusters publish audit logs to CloudWatch Logs for better monitoring.</td>
+        <td>6</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>93</td>
+        <td>RDS</td>
+        <td>Database logging should be enabled</td>
+        <td>Ensures that database logging is enabled to maintain audit trails and access logs.</td>
+        <td>13</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>94</td>
+        <td>RDS</td>
+        <td>IAM authentication configured for RDS clusters</td>
+        <td>Configures IAM authentication for enhanced security in RDS clusters.</td>
+        <td>6</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>95</td>
+        <td>RDS</td>
+        <td>RDS Aurora clusters protected by backup plan</td>
+        <td>Ensures RDS Aurora clusters are protected by a backup plan to prevent data loss.</td>
+        <td>6</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>96</td>
+        <td>RDS</td>
+        <td>RDS Aurora clusters have backtracking enabled</td>
+        <td>Enables backtracking for RDS Aurora clusters to restore to a previous state quickly.</td>
+        <td>6</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>97</td>
+        <td>RDS</td>
+        <td>RDS Aurora PostgreSQL clusters not exposed to local file read vulnerability</td>
+        <td>Ensures RDS Aurora PostgreSQL clusters are not exposed to local file read vulnerabilities.</td>
+        <td>5</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>98</td>
+        <td>RDS</td>
+        <td>RDS clusters have deletion protection enabled</td>
+        <td>Ensures deletion protection is enabled for RDS clusters to prevent accidental deletion.</td>
+        <td>3</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>99</td>
+        <td>RDS</td>
+        <td>RDS database clusters use a custom administrator username</td>
+        <td>Configures RDS database clusters to use a custom administrator username for better security.</td>
+        <td>1</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>RDS</td>
+        <td>RDS database instances use a custom administrator username</td>
+        <td>Configures RDS database instances to use a custom administrator username for better security.</td>
+        <td>1</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>RDS</td>
+        <td>RDS databases and clusters not use default database engine port</td>
+        <td>Ensures that RDS databases and clusters do not use the default database engine port for security reasons.</td>
+        <td>6</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>102</td>
+        <td>RDS</td>
+        <td>RDS DB clusters configured for multiple Availability Zones</td>
+        <td>Configures RDS DB clusters for high availability across multiple Availability Zones.</td>
+        <td>4</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>103</td>
+        <td>RDS</td>
+        <td>RDS DB clusters encrypted with CMK</td>
+        <td>Ensures RDS DB clusters are encrypted with Customer Managed Keys (CMK) for added security.</td>
+        <td>6</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>104</td>
+        <td>RDS</td>
+        <td>RDS DB instance and cluster enhanced monitoring enabled</td>
+        <td>Ensures that enhanced monitoring is enabled for RDS DB instances and clusters for better performance insights.</td>
+        <td>15</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>105</td>
+        <td>RDS</td>
+        <td>RDS DB instance multi-AZ should be enabled</td>
+        <td>Ensures RDS DB instances are configured for multi-AZ deployment for high availability.</td>
+        <td>13</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>106</td>
+        <td>RDS</td>
+        <td>RDS DB instance protected by backup plan</td>
+        <td>Ensures that RDS DB instances are protected by a backup plan to prevent data loss.</td>
+        <td>13</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>107</td>
+        <td>RDS</td>
+        <td>RDS DB instances connections encrypted</td>
+        <td>Ensures that connections to RDS DB instances are encrypted for security.</td>
+        <td>13</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>108</td>
+        <td>RDS</td>
+        <td>RDS DB instances configured to copy tags to snapshots</td>
+        <td>Ensures that RDS DB instances are configured to copy tags to their snapshots for better management.</td>
+        <td>8</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>109</td>
+        <td>RDS</td>
+        <td>RDS DB instances should be in a backup plan</td>
+        <td>Ensures RDS DB instances are included in a backup plan for data safety.</td>
+        <td>13</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>RDS</td>
+        <td>RDS DB instances integrated with CloudWatch logs</td>
+        <td>Ensures RDS DB instances are integrated with CloudWatch logs for monitoring and alerting.</td>
+        <td>9</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>111</td>
+        <td>RDS</td>
+        <td>RDS DB instances have deletion protection enabled</td>
+        <td>Ensures that deletion protection is enabled for RDS DB instances to prevent accidental deletion.</td>
+        <td>12</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>112</td>
+        <td>RDS</td>
+        <td>RDS DB instances have IAM authentication enabled</td>
+        <td>Ensures IAM authentication is enabled for RDS DB instances for enhanced security.</td>
+        <td>13</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>113</td>
+        <td>RDS</td>
+        <td>RDS DB instances should not use public subnet</td>
+        <td>Ensures RDS DB instances are not deployed in a public subnet for security reasons.</td>
+        <td>13</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>114</td>
+        <td>RDS</td>
+        <td>RDS snapshots should be encrypted at rest</td>
+        <td>Ensures that RDS snapshots are encrypted at rest for data protection.</td>
+        <td>5</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>115</td>
+        <td>RDS</td>
+        <td>RDS PostgreSQL DB instances not exposed to local file read vulnerability</td>
+        <td>Ensures RDS PostgreSQL DB instances are not exposed to local file read vulnerabilities.</td>
+        <td>11</td>
+        <td class="high">High</td>
+    </tr>
+</table>
+
+<h2>S3 Controls</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>S3</td>
+        <td>All data in AWS S3 discovered</td>
+        <td>Ensures all S3 data is discovered, classified, and secured to meet compliance requirements.</td>
+        <td>102</td>
+        <td class="high">High</td>
+    </tr>
+    <tr>
+        <td>117</td>
+        <td>S3</td>
+        <td>S3 buckets object logging enabled</td>
+        <td>Ensures S3 buckets have object logging enabled for tracking access and changes.</td>
+        <td>170</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>118</td>
+        <td>S3</td>
+        <td>S3 buckets static website hosting disabled</td>
+        <td>Ensures that static website hosting is disabled on S3 buckets to prevent unintended exposure.</td>
+        <td>2</td>
+        <td class="medium">Medium</td>
+    </tr>
+    <tr>
+        <td>119</td>
+        <td>S3</td>
+        <td>S3 public access blocked at account level</td>
+        <td>Ensures that public access is blocked at the account level for enhanced security.</td>
+        <td>2</td>
+        <td class="high">High</td>
+    </tr>
+</table>
+
+<h2>Secrets Manager Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>120</td><td>Secrets Manager</td><td>Secrets Manager secrets should be encrypted using CMK</td><td>Ensures that all secrets are securely encrypted using Customer Master Keys (CMK).</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>121</td><td>Secrets Manager</td><td>Secrets Manager secrets should be rotated as per the rotation schedule</td><td>Ensures that secrets are rotated regularly according to the defined schedule.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>122</td><td>Secrets Manager</td><td>Secrets Manager secrets should be rotated within a specified number of days</td><td>Ensures timely rotation of secrets to minimize exposure risk.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>123</td><td>Secrets Manager</td><td>Secrets Manager secrets should be rotated within specific number of days</td><td>Ensures that secrets are rotated within the specified timeframe.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>124</td><td>Secrets Manager</td><td>Secrets Manager secrets should have automatic rotation enabled</td><td>Ensures that secrets are automatically rotated without manual intervention.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>125</td><td>Secrets Manager</td><td>Secrets Manager secrets that have not been used in 90 days should be removed</td><td>Identifies and removes secrets that are no longer in use enhancing security.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>126</td><td>Security Hub</td><td>AWS Security Hub should be enabled for an AWS Account</td><td>Ensures that Security Hub is active for centralized security management.</td><td>2</td><td class="high">High</td></tr>
+</table>
+
+<h2>VPC Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>127</td><td>VPC</td><td>Ensure no security groups allow ingress from 0.0.0.0/0 to remote server administration ports</td><td>Prevents unauthorized access to critical server administration ports.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>128</td><td>VPC</td><td>Network ACLs should not allow ingress from 0.0.0.0/0 to port 22 or port 3389</td><td>Ensures that remote access ports are secured from unrestricted access.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>129</td><td>VPC</td><td>Security groups should not allow unrestricted access to ports with high risk</td><td>Reduces the risk of exploitation by restricting access to sensitive ports.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>130</td><td>VPC</td><td>Unused EC2 security groups should be removed</td><td>Helps to minimize security risk by cleaning up unused security groups.</td><td>65</td><td class="medium">Medium</td></tr>
+    <tr><td>131</td><td>VPC</td><td>VPC default security group should not allow inbound and outbound traffic</td><td>Ensures the default security group is properly configured for security.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>132</td><td>VPC</td><td>VPC endpoint services should have acceptance required enabled</td><td>Ensures that only authorized services can connect to the endpoint.</td><td>200</td><td class="high">High</td></tr>
+    <tr><td>133</td><td>VPC</td><td>VPC flow logs should be enabled</td><td>Ensures that traffic logs are collected for auditing and monitoring.</td><td>7</td><td class="high">High</td></tr>
+    <tr><td>134</td><td>VPC</td><td>VPC route table should restrict public access to IGW</td><td>Prevents unauthorized access to the internet through the Internet Gateway.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>135</td><td>VPC</td><td>VPC security groups should be associated with at least one ENI</td><td>Ensures proper network interface assignment to security groups.</td><td>65</td><td class="medium">Medium</td></tr>
+    <tr><td>136</td><td>VPC</td><td>VPC Security groups should only allow unrestricted incoming traffic for authorized ports</td><td>Limits exposure by allowing only specified ports to receive traffic.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>137</td><td>VPC</td><td>VPC security groups should restrict ingress access on ports 20, 2122, 3306, 3389, 4333 from 0.0.0.0/0</td><td>Protects against unauthorized access to commonly exploited ports.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>138</td><td>VPC</td><td>VPC security groups should restrict ingress SSH access from 0.0.0.0/0</td><td>Secures SSH access by limiting source addresses.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>139</td><td>VPC</td><td>VPC security groups should restrict ingress TCP and UDP access from 0.0.0.0/0</td><td>Ensures all ingress TCP and UDP traffic is properly controlled.</td><td>54</td><td class="high">High</td></tr>
+    <tr><td>140</td><td>VPC</td><td>VPC security groups should restrict uses of 'launch-wizard' security groups</td><td>Avoids reliance on default security groups that may not be appropriately configured.</td><td>2</td><td class="high">High</td></tr>
+    <tr><td>141</td><td>VPC</td><td>VPC should be configured to use VPC endpoints</td><td>Enhances security by ensuring all services utilize VPC endpoints.</td><td>9</td><td class="high">High</td></tr>
+    <tr><td>142</td><td>VPC</td><td>VPC subnet auto assign public IP should be disabled</td><td>Prevents instances from being assigned a public IP by default.</td><td>33</td><td class="medium">Medium</td></tr>
+    <tr><td>143</td><td>VPC</td><td>VPCs peering connection route tables should have least privilege</td><td>Ensures that route tables are configured with the least privilege necessary for connectivity.</td><td>16</td><td class="medium">Medium</td></tr>
+    <tr><td>144</td><td>VPC</td><td>VPCs should exist in multiple regions</td><td>Enhances resilience by distributing VPCs across multiple regions.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>145</td><td>VPC</td><td>VPCs should have both public and private subnets configured</td><td>Ensures proper segmentation and security of resources within VPCs.</td><td>9</td><td class="high">High</td></tr>
+</table>
+
+<h2>Account Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>1</td><td>Account</td><td>AWS account should be part of AWS Organizations</td><td>Ensures accounts are centrally managed, enhancing security and compliance.</td><td>1</td><td class="safe">Safe/Well Architected</td></tr>
+</table>
+
+<h2>CloudFormation Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>19</td><td>CloudFormation</td><td>CloudFormation stacks differ from the expected configuration</td><td>Indicates potential configuration drift that could lead to security vulnerabilities.</td><td>37</td><td class="critical">Critical</td></tr>
+    <tr><td>20</td><td>CloudFormation</td><td>CloudFormation stacks should have notifications enabled</td><td>Lack of notifications can delay response to configuration changes, increasing security risk.</td><td>37</td><td class="medium">Medium</td></tr>
+    <tr><td>21</td><td>CloudFormation</td><td>CloudFormation stacks termination protection should be enabled</td><td>Without termination protection, stacks could be accidentally deleted, causing service disruptions.</td><td>33</td><td class="high">High</td></tr>
+</table>
+
+<h2>CloudFront Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>22</td><td>CloudFront</td><td>CloudFront distributions access logs should be enabled</td><td>Without access logs, tracking unauthorized access attempts becomes difficult, posing security risks.</td><td>15</td><td class="critical">Critical</td></tr>
+    <tr><td>23</td><td>CloudFront</td><td>CloudFront distributions should encrypt traffic to custom origins</td><td>Unencrypted traffic may expose sensitive data during transit, leading to potential data breaches.</td><td>12</td><td class="critical">Critical</td></tr>
+    <tr><td>24</td><td>CloudFront</td><td>CloudFront distributions should encrypt traffic to non-S3 origins</td><td>Non-encrypted traffic increases the risk of interception and data exposure.</td><td>12</td><td class="critical">Critical</td></tr>
+    <tr><td>25</td><td>CloudFront</td><td>CloudFront distributions should have a default root object configured</td><td>Without a default root object, users may face access issues, leading to degraded user experience.</td><td>15</td><td class="medium">Medium</td></tr>
+    <tr><td>26</td><td>CloudFront</td><td>CloudFront distributions should have AWS WAF enabled</td><td>Without AWS WAF, distributions are more vulnerable to attacks, increasing the risk of data breaches.</td><td>12</td><td class="high">High</td></tr>
+    <tr><td>27</td><td>CloudFront</td><td>CloudFront distributions should have field-level encryption enabled</td><td>Without field-level encryption, sensitive data may be exposed, violating compliance regulations.</td><td>15</td><td class="high">High</td></tr>
+    <tr><td>28</td><td>CloudFront</td><td>CloudFront distributions should have geo restriction enabled</td><td>Lack of geo restrictions can allow access from untrusted regions, increasing the risk of data breaches.</td><td>15</td><td class="high">High</td></tr>
+    <tr><td>29</td><td>CloudFront</td><td>CloudFront distributions should have the latest TLS version</td><td>Using outdated TLS versions can expose traffic to vulnerabilities, increasing security risks.</td><td>15</td><td class="critical">Critical</td></tr>
+    <tr><td>30</td><td>CloudFront</td><td>CloudFront distributions should have origin access identity enabled</td><td>Without origin access identity, S3 origins may be exposed to the public, compromising data security.</td><td>26</td><td class="high">High</td></tr>
+    <tr><td>31</td><td>CloudFront</td><td>CloudFront distributions should have origin failover configured</td><td>Failure to configure origin failover may lead to service disruptions during origin outages.</td><td>15</td><td class="medium">Medium</td></tr>
+    <tr><td>32</td><td>CloudFront</td><td>CloudFront distributions should not point to non-existent S3 origins</td><td>Pointing to non-existent origins can lead to unnecessary errors and service interruptions.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>33</td><td>CloudFront</td><td>CloudFront distributions should require encryption in transit</td><td>Failing to enforce encryption can lead to data leaks and non-compliance with security standards.</td><td>5</td><td class="critical">Critical</td></tr>
+    <tr><td>34</td><td>CloudFront</td><td>CloudFront distributions should use custom SSL/TLS certificates</td><td>Not using custom certificates may lead to untrusted communications, jeopardizing data security.</td><td>3</td><td class="high">High</td></tr>
+    <tr><td>35</td><td>CloudFront</td><td>CloudFront distributions should use secure SSL cipher</td><td>Using insecure ciphers can expose traffic to interception and potential exploitation.</td><td>15</td><td class="high">High</td></tr>
+    <tr><td>36</td><td>CloudFront</td><td>CloudFront distributions should use SNI to serve HTTPS requests</td><td>Lack of SNI may result in improper SSL certificate validation, leading to security vulnerabilities.</td><td>3</td><td class="medium">Medium</td></tr>
+</table>
+
+<h2>CloudTrail Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>2</td><td>CloudTrail</td><td>All S3 buckets should log S3 data events in CloudTrail</td><td>Ensures auditing and monitoring of S3 data events, meeting compliance best practices.</td><td>102</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>37</td><td>CloudTrail</td><td>At least one CloudTrail trail should be enabled in the AWS account</td><td>Without CloudTrail, auditing and monitoring of account activity is severely limited, risking compliance.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>38</td><td>CloudTrail</td><td>At least one multi-region AWS CloudTrail should be present in an account</td><td>Failing to enable multi-region trails may miss activities in unmonitored regions, increasing security risks.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>39</td><td>CloudTrail</td><td>At least one trail should be enabled with security best practices</td><td>Without security best practices, trails may not capture all relevant events, hindering auditing capabilities.</td><td>2</td><td class="high">High</td></tr>
+</table>
+
+<h2>CloudWatch Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>3</td><td>CloudWatch</td><td>CloudWatch should not allow cross-account sharing</td><td>Prevents unauthorized access to CloudWatch metrics, ensuring data integrity and compliance.</td><td>1</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>40</td><td>CloudWatch</td><td>CloudWatch alarm action should be enabled</td><td>Disabling alarm actions can delay incident responses, potentially increasing damage from security breaches.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>41</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for AWS Config configuration changes</td><td>Lack of alerts for configuration changes can lead to unmonitored security issues.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>42</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for AWS Management Console authentication failures</td><td>Without alerts for authentication failures, unauthorized access attempts may go unnoticed.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>43</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for AWS Management Console sign-in without MFA</td><td>Failing to alert on sign-ins without MFA increases vulnerability to unauthorized access.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>44</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for changes to Network Access Control Lists (NACL)</td><td>Lack of monitoring for NACL changes can expose the network to unauthorized access.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>45</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for changes to network gateways</td><td>Unmonitored changes to network gateways can create vulnerabilities in network security.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>46</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for CloudTrail configuration changes</td><td>Failing to monitor changes to CloudTrail can lead to gaps in auditing and compliance.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>47</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for disabling or scheduled deletion of customer managed keys</td><td>Lack of alerts for key management changes can lead to unauthorized access to sensitive data.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>48</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for IAM policy changes</td><td>Unmonitored changes to IAM policies can create security vulnerabilities by altering access permissions.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>49</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for route table changes</td><td>Failing to monitor route table changes can lead to unintended network traffic routing, increasing risk.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>50</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for S3 bucket policy changes</td><td>Lack of monitoring for bucket policy changes can lead to unauthorized data access.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>51</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for security group changes</td><td>Unmonitored security group changes can expose resources to unwanted access, compromising security.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>52</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for unauthorized API calls</td><td>Without alerts for unauthorized API calls, potential abuse or breaches may go unnoticed.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>53</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for usage of 'root' account</td><td>Lack of monitoring for root account usage increases the risk of unauthorized access to sensitive resources.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>54</td><td>CloudWatch</td><td>Ensure a log metric filter and alarm exist for VPC changes</td><td>Unmonitored VPC changes can expose the network to risks, compromising overall security.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>55</td><td>CloudWatch</td><td>Ensure AWS Organizations changes are monitored</td><td>Lack of monitoring for AWS Organizations changes can lead to misconfigurations and increased risks.</td><td>1</td><td class="medium">Medium</td></tr>
+    <tr><td>56</td><td>CloudWatch</td><td>Log group encryption at rest should be enabled</td><td>Without encryption, logs may be exposed to unauthorized access, violating compliance requirements.</td><td>557</td><td class="high">High</td></tr>
+    <tr><td>57</td><td>CloudWatch</td><td>Log group retention period should be at least 365 days</td><td>Short retention periods can lead to loss of crucial data needed for audits and investigations.</td><td>557</td><td class="medium">Medium</td></tr>
+</table>
+
+<h2>CodeBuild Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>4</td><td>CodeBuild</td><td>CodeBuild project plaintext environment variables should not contain sensitive AWS values</td><td>Ensures sensitive information is not exposed in environment variables, maintaining security compliance.</td><td>84</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>5</td><td>CodeBuild</td><td>CodeBuild projects should not be unused for 90 days or greater</td><td>Identifies and mitigates the risks associated with unused projects, promoting resource efficiency.</td><td>58</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>6</td><td>CodeBuild</td><td>CodeBuild projects should not use a user-controlled buildspec</td><td>Ensures that build processes are controlled and secure, preventing potential vulnerabilities.</td><td>84</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>58</td><td>CodeBuild</td><td>CodeBuild GitHub or Bitbucket source repository URLs should use OAuth</td><td>Using insecure methods for repository access can expose sensitive data, increasing security vulnerabilities.</td><td>79</td><td class="high">High</td></tr>
+    <tr><td>59</td><td>CodeBuild</td><td>CodeBuild project artifact encryption should be enabled</td><td>Lack of artifact encryption can expose sensitive information during the build process.</td><td>10</td><td class="medium">Medium</td></tr>
+    <tr><td>60</td><td>CodeBuild</td><td>CodeBuild project environments should not have privileged mode enabled</td><td>Running projects in privileged mode increases the risk of exploitation through elevated permissions.</td><td>64</td><td class="critical">Critical</td></tr>
+    <tr><td>61</td><td>CodeBuild</td><td>CodeBuild projects should not be unused for 90 days or greater</td><td>Unused projects may pose security risks if not monitored or properly decommissioned.</td><td>26</td><td class="medium">Medium</td></tr>
+</table>
+
+<h2>Config Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>7</td><td>Config</td><td>Config configuration recorder should not fail to deliver logs</td><td>Ensures continuous monitoring and compliance by logging configuration changes.</td><td>1</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>62</td><td>Config</td><td>AWS Config should be enabled</td><td>Without AWS Config, tracking configuration changes becomes challenging, increasing the risk of misconfigurations.</td><td>30</td><td class="critical">Critical</td></tr>
+</table>
+
+<h2>DMS Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>8</td><td>DMS</td><td>DMS replication instances should not be publicly accessible</td><td>Protects sensitive data by ensuring that replication instances are not exposed to the public internet.</td><td>2</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>63</td><td>DMS</td><td>DMS endpoints should use SSL</td><td>Not using SSL for DMS endpoints can expose sensitive data during migration, increasing risks.</td><td>3</td><td class="high">High</td></tr>
+</table>
+
+<h2>ECR Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>9</td><td>ECR</td><td>ECR repositories should have image scan on push enabled</td><td>Enhances security by scanning images for vulnerabilities upon being pushed to the repository.</td><td>34</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>10</td><td>ECR</td><td>ECR repositories should have lifecycle policies configured</td><td>Manages the lifecycle of images, reducing the risk of vulnerabilities from outdated images.</td><td>18</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>11</td><td>ECR</td><td>ECR repositories should prohibit public access</td><td>Ensures that ECR repositories are secure and not accessible to unauthorized users.</td><td>34</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>64</td><td>ECR</td><td>ECR private repositories should have tag immutability configured</td><td>Without tag immutability, unauthorized changes to image tags can lead to security vulnerabilities.</td><td>34</td><td class="high">High</td></tr>
+</table>
+
+<h2>Elastic Beanstalk Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>65</td><td>Elastic Beanstalk</td><td>Elastic Beanstalk environment should have managed updates enabled</td><td>Without managed updates, environments may run outdated software, exposing vulnerabilities.</td><td>21</td><td class="high">High</td></tr>
+    <tr><td>66</td><td>Elastic Beanstalk</td><td>Elastic Beanstalk should stream logs to CloudWatch</td><td>Failing to stream logs can hinder monitoring and troubleshooting, increasing security risks.</td><td>4</td><td class="medium">Medium</td></tr>
+</table>
+
+<h2>ElastiCache Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>67</td><td>ElastiCache</td><td>ElastiCache clusters should not use public_subnet</td><td>Using public subnets can expose ElastiCache clusters to unauthorized access, compromising data security.</td><td>12</td><td class="critical">Critical</td></tr>
+    <tr><td>68</td><td>ElastiCache</td><td>ElastiCache for Redis replication groups before version 6.0 should use Redis Auth</td><td>Not using Redis Auth can expose Redis data to unauthorized access, leading to data breaches.</td><td>9</td><td class="high">High</td></tr>
+    <tr><td>69</td><td>ElastiCache</td><td>ElastiCache for Redis replication groups should be encrypted at rest</td><td>Without encryption at rest, sensitive data in Redis can be exposed to unauthorized access.</td><td>9</td><td class="high">High</td></tr>
+    <tr><td>70</td><td>ElastiCache</td><td>ElastiCache for Redis replication groups should be encrypted in transit</td><td>Failing to encrypt data in transit can lead to interception and data breaches.</td><td>9</td><td class="high">High</td></tr>
+    <tr><td>71</td><td>ElastiCache</td><td>ElastiCache for Redis replication groups should be encrypted with CMK</td><td>Not using Customer Managed Keys for encryption may lead to compliance violations.</td><td>9</td><td class="high">High</td></tr>
+    <tr><td>72</td><td>ElastiCache</td><td>ElastiCache for Redis replication groups should have automatic failover enabled</td><td>Lack of automatic failover can lead to service disruptions during outages, increasing downtime.</td><td>6</td><td class="medium">Medium</td></tr>
+    <tr><td>73</td><td>ElastiCache</td><td>ElastiCache Redis cluster automatic backup should be enabled with retention period of 15 days or greater</td><td>Inadequate backup retention increases the risk of data loss in case of failures.</td><td>9</td><td class="medium">Medium</td></tr>
+</table>
+
+<h2>EMR Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>12</td><td>EMR</td><td>EMR public access should be blocked at account level</td><td>Ensures that EMR resources are not publicly accessible, enhancing security at the account level.</td><td>1</td><td class="safe">Safe/Well Architected</td></tr>
+</table>
+
+<h2>KMS Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>13</td><td>KMS</td><td>KMS key decryption should be restricted in IAM customer managed policy</td><td>Protects sensitive data by limiting access to KMS key decryption, ensuring compliance with security best practices.</td><td>355</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>14</td><td>KMS</td><td>KMS key decryption should be restricted in IAM inline policy</td><td>Ensures that inline policies do not allow unauthorized access to KMS key decryption, enhancing data security.</td><td>119</td><td class="safe">Safe/Well Architected</td></tr>
+</table>
+
+<h2>Redshift Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>15</td><td>Redshift</td><td>Redshift clusters should prohibit public access</td><td>Protects sensitive data by preventing public access to Redshift clusters.</td><td>1</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>74</td><td>Redshift</td><td>AWS Redshift audit logging should be enabled</td><td>Without audit logging, monitoring Redshift activity becomes challenging, increasing security risks.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>75</td><td>Redshift</td><td>AWS Redshift enhanced VPC routing should be enabled</td><td>Lack of enhanced VPC routing can lead to exposure of data to untrusted networks.</td><td>1</td><td class="high">High</td></tr>
+    <tr><td>76</td><td>Redshift</td><td>Redshift cluster audit logging and encryption should be enabled</td><td>Without both audit logging and encryption, Redshift data is vulnerable to unauthorized access.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>77</td><td>Redshift</td><td>Redshift cluster encryption in transit should be enabled</td><td>Lack of encryption in transit exposes data to interception, increasing risk.</td><td>1</td><td class="critical">Critical</td></tr>
+    <tr><td>78</td><td>Redshift</td><td>Redshift clusters should be encrypted with CMK</td><td>Not using Customer Managed Keys for encryption can lead to compliance violations.</td><td>1</td><td class="high">High</td></tr>
+</table>
+
+<h2>SNS Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>16</td><td>SNS</td><td>SNS topic policies should prohibit public access</td><td>Ensures that SNS topics are secure and not accessible to unauthorized users, maintaining data confidentiality.</td><td>2</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>79</td><td>SNS</td><td>SNS topic policies should prohibit public access</td><td>Public access policies can lead to unauthorized access to SNS topics, compromising security.</td><td>3</td><td class="high">High</td></tr>
+</table>
+
+<h2>SQS Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>17</td><td>SQS</td><td>SQS queue policies should prohibit public access</td><td>Protects sensitive information by preventing unauthorized public access to SQS queues.</td><td>1</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>80</td><td>SQS</td><td>SQS queue policies should prohibit public access</td><td>Public access can expose SQS queues to unauthorized access, leading to data breaches.</td><td>1</td><td class="high">High</td></tr>
+</table>
+
+<h2>SSM Control Table</h2>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Service</th>
+        <th>Control Title</th>
+        <th>Description</th>
+        <th>Open Issues</th>
+        <th>Priority</th>
+    </tr>
+    <tr><td>18</td><td>SSM</td><td>EC2 instances should be managed by AWS Systems Manager</td><td>Ensures proper management and monitoring of EC2 instances, enhancing operational security and compliance.</td><td>39</td><td class="safe">Safe/Well Architected</td></tr>
+    <tr><td>81</td><td>SSM</td><td>EC2 instances should be managed by AWS Systems Manager</td><td>Unmanaged instances pose security risks due to lack of monitoring and management.</td><td>74</td><td class="critical">Critical</td></tr>
+</table>
+
+</body>
+</html>
